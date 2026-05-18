@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合同法智能助手</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/learning.css">
+</head>
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">正在加载数据库...</div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <h1 class="header-title">合同法智能助手</h1>
+        <nav class="nav">
+            <a href="#search" class="nav-link active" data-page="search">速查</a>
+            <a href="#learning" class="nav-link" data-page="learning">学习中心</a>
+        </nav>
+    </header>
+    
+    <main class="main">
+        <section id="search-page" class="page active">
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            class="search-input" 
+                            placeholder="输入合同条目关键词，如：无效、违约、解除..."
+                            autocomplete="off"
+                        >
+                        <button id="search-btn" class="search-btn">查询</button>
+                    </div>
+                    <div class="search-tips">
+                        💡 提示：支持多个关键词搜索，用空格分隔
+                    </div>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </section>
+        
+        <section id="learning-page" class="page">
+            <div class="learning-container">
+                <nav class="chapter-nav" id="chapter-nav"></nav>
+                <div class="content-area" id="content-area"></div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/learning.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
